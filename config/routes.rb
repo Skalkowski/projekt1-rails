@@ -1,6 +1,9 @@
 Projekt::Application.routes.draw do
+  get "mainpage/index"
+  get "mainpage/autor"
+  get "mainpage/about"
   resources :gists
-  root 'gists#index'
+  root 'mainpage#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
