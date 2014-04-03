@@ -1,0 +1,17 @@
+
+<div class="table-responsive">
+  <table class="table table-striped">
+
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Header</th>
+        <th>Header</th>
+        <th>Header</th>
+        <th>Header</th>
+      </tr>
+    </thead>
+   <%= render "gists/tabela" %>
+  </table>
+</div>
+<br>

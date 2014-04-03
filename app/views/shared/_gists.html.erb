@@ -1,0 +1,22 @@
+<% @gists.each do |gist| %>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class='tekst'><%= gist.lang %></h3>
+        </div>
+        <div class="panel-body">
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <p class='tekst'><strong>Snippet </strong><% if gist.snippet.length > 10 %>
+        <td><%= gist.snippet[0, 20]%> [...]</td>
+        <% else %>
+        <td><%= gist.snippet %></td>
+        <% end %></p>
+                    <p class='tekst'><strong>Description: </strong><%= gist.description %></p>
+                    <a href='<%= edit_gist_path(gist) %>'><button type="button" class="btn btn-xs btn-success">Edit &raquo;</button></a>
+                    <a href='/gists/<%= gist.id %>'><button type="button" class="btn btn-xs btn-success">Show &raquo;</button></a>
+                    <%= link_to gist, method: :delete, data: { confirm: 'Are you sure?' } do %><button type="button" class="btn btn-xs btn-success">Destroy &raquo;</button><% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>

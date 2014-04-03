@@ -1,20 +1,12 @@
-<h2 class="sub-header">Section title</h2>
-<div class="table-responsive">
-  <table class="table table-striped">
+<p>
+          <a class="btn btn-lg btn-primary" href="<%= new_gist_path %>" role="button">Add new</a>
+</p>
+<div class="gists"> 
+	<%= render :partial => 'shared/gists', :locals => { :gists => @gists } %> 
+</div> 
 
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Header</th>
-        <th>Header</th>
-        <th>Header</th>
-        <th>Header</th>
-      </tr>
-    </thead>
-   <%= render "gists/tabela" %>
-  </table>
-</div>
-<br>
+<%= link_to 'Load More Gists', gists_path(:page => @gists.next_page), :class => 'load-more-gists', :remote => true if @gists.next_page %>
+
 <p>
           <a class="btn btn-lg btn-primary" href="<%= new_gist_path %>" role="button">Add new</a>
 </p>
